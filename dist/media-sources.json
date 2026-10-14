@@ -1,0 +1,65 @@
+[
+  {
+    "file": "hero.mp4",
+    "source": "https://www.pexels.com/video/drone-footage-of-a-mountain-forest-5607838/",
+    "creator": "Zlatin Georgiev",
+    "license": "https://www.pexels.com/license/",
+    "description": "Aerial autumn forest with mountain ranges. Trimmed to 16 seconds, 1280\u00d7720 H264 without audio, CRF27 faststart.",
+    "original": "https://videos.pexels.com/video-files/5607838/5607838-uhd_2560_1440_24fps.mp4",
+    "poster": "hero-poster.jpg"
+  },
+  {
+    "file": "forest.jpg",
+    "source": "https://www.pexels.com/photo/tea-plantation-and-wooded-mountains-5639025/",
+    "creator": "Ravi Kant",
+    "license": "https://www.pexels.com/license/",
+    "description": "Serene tea plantation with lush greenery and mountains under a clear blue sky.",
+    "original": "https://images.pexels.com/photos/5639025/pexels-photo-5639025.jpeg",
+    "download": "https://images.pexels.com/photos/5639025/pexels-photo-5639025.jpeg?auto=compress&cs=tinysrgb&w=1400&q=85"
+  },
+  {
+    "file": "coast.jpg",
+    "source": "https://www.pexels.com/photo/seashore-near-on-forest-trees-on-bird-s-eye-view-1123484/",
+    "creator": "Pok Rie",
+    "license": "https://www.pexels.com/license/",
+    "description": "Aerial shot of a rocky beach with turquoise water and lush green forest.",
+    "original": "https://images.pexels.com/photos/1123484/pexels-photo-1123484.jpeg",
+    "download": "https://images.pexels.com/photos/1123484/pexels-photo-1123484.jpeg?auto=compress&cs=tinysrgb&w=1400&q=85"
+  },
+  {
+    "file": "mountain.jpg",
+    "source": "https://www.pexels.com/photo/camel-caravan-in-the-mountains-of-nubra-valley-39352208/",
+    "creator": "Rayees Reshi",
+    "license": "https://www.pexels.com/license/",
+    "description": "Camel riders traverse the vast landscape of Nubra Valley with towering mountains in the background.",
+    "original": "https://images.pexels.com/photos/39352208/pexels-photo-39352208/free-photo-of-camel-caravan-in-the-mountains-of-nubra-valley.jpeg",
+    "download": "https://images.pexels.com/photos/39352208/pexels-photo-39352208/free-photo-of-camel-caravan-in-the-mountains-of-nubra-valley.jpeg?auto=compress&cs=tinysrgb&w=1400&q=85"
+  },
+  {
+    "file": "destination.jpg",
+    "source": "https://www.pexels.com/photo/hawa-mahal-in-india-15344913/",
+    "creator": "Rohan Dewangan",
+    "license": "https://www.pexels.com/license/",
+    "description": "Hawa Mahal, an iconic palace in Jaipur, India, showcasing stunning Rajasthani architecture.",
+    "original": "https://images.pexels.com/photos/15344913/pexels-photo-15344913/free-photo-of-hawa-mahal-in-india.jpeg",
+    "download": "https://images.pexels.com/photos/15344913/pexels-photo-15344913/free-photo-of-hawa-mahal-in-india.jpeg?auto=compress&cs=tinysrgb&w=1400&q=85"
+  },
+  {
+    "file": "team.jpg",
+    "source": "https://www.pexels.com/photo/a-team-sitting-watching-on-the-laptop-7698825/",
+    "creator": "Yan Krukau",
+    "license": "https://www.pexels.com/license/",
+    "description": "Focused team of professionals discussing work at a laptop during an office meeting.",
+    "original": "https://images.pexels.com/photos/7698825/pexels-photo-7698825.jpeg",
+    "download": "https://images.pexels.com/photos/7698825/pexels-photo-7698825.jpeg?auto=compress&cs=tinysrgb&w=1400&q=85"
+  },
+  {
+    "file": "travel.jpg",
+    "source": "https://www.pexels.com/photo/a-woman-in-an-ornate-corridor-5002351/",
+    "creator": "Pooja Saini Rajoriya",
+    "license": "https://www.pexels.com/license/",
+    "description": "A woman walks through an intricately designed corridor showcasing Indian architecture.",
+    "original": "https://images.pexels.com/photos/5002351/pexels-photo-5002351.jpeg",
+    "download": "https://images.pexels.com/photos/5002351/pexels-photo-5002351.jpeg?auto=compress&cs=tinysrgb&w=1400&q=85"
+  }
+]
