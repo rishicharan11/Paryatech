@@ -2,3 +2,9 @@
 *.log
 .sites-runtime/
 node_modules/
+.vercel/
+.openai/
+output/
+.env
+.env.*
+!.env.example

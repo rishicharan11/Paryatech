@@ -1,0 +1,48 @@
+/* Outcrowd's rotating stage conveyor, expressed in the approved Paryatech system. */
+.stage-section{padding:100px 0 120px;background:var(--white);position:relative}
+.stage-heading{display:grid;grid-template-columns:1fr 1fr;column-gap:13%;margin-bottom:70px}
+.stage-heading .eyebrow{grid-column:1/-1;margin-bottom:20px;color:color-mix(in srgb,var(--ink) 56%,transparent)}
+.stage-heading h2{font:400 80px/.9 var(--serif);letter-spacing:-.04em}
+.stage-heading>p:last-child{font:22px/1.35 var(--serif);align-self:end;max-width:360px;color:color-mix(in srgb,var(--ink) 62%,transparent)}
+.stage-scene{width:min(1234px,85.6944%);margin-inline:auto}
+.stage-step{display:grid;grid-template-columns:.85fr 1.15fr;gap:11%;align-items:center;margin-bottom:100px}
+.stage-step:last-child{margin-bottom:0}
+.stage-index{font:10px/1.5 var(--sans);letter-spacing:.06em;color:var(--teal);margin-bottom:24px}
+.stage-copy h3{font:400 clamp(54px,5.55vw,80px)/.95 var(--serif);letter-spacing:-.04em;margin-bottom:30px}
+.stage-description{font:22px/1.4 var(--serif);color:color-mix(in srgb,var(--ink) 65%,transparent);max-width:400px}
+.stage-tag{display:inline-block;margin-top:28px;padding-bottom:8px;border-bottom:1px solid color-mix(in srgb,var(--teal) 32%,transparent);font:11px/1.5 var(--sans);color:var(--teal)}
+.stage-card{aspect-ratio:1.4;position:relative;background:var(--mist);border-radius:16px;overflow:hidden;isolation:isolate;box-shadow:0 12px 40px #1111110c}
+.stage-landscape{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.78)}
+.stage-product{position:absolute;top:11%;left:7%;right:7%;height:74%;border-radius:7px;overflow:hidden;background:var(--white);box-shadow:0 12px 28px #11111124;transform:rotate(-2deg)}
+.stage-toolbar{display:flex;height:27px;align-items:center;justify-content:space-between;padding-inline:10px;border-bottom:1px solid #11111112;font:8px/1 var(--sans);color:color-mix(in srgb,var(--ink) 65%,transparent)}
+.stage-dots{display:flex;gap:4px}.stage-dots i{width:4px;height:4px;background:var(--mist);border-radius:50%}
+.stage-product>img{width:100%;height:auto;aspect-ratio:1.55;object-fit:cover;object-position:top}
+.stage-status{position:absolute;left:12%;right:12%;bottom:13%;min-height:43px;padding:10px 14px;display:flex;align-items:center;gap:9px;border-radius:7px;background:var(--white);font:11px/1.35 var(--sans);box-shadow:0 10px 30px #11111125}
+.stage-status>span:last-child{margin-left:auto;color:var(--teal)}.stage-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);flex-shrink:0}
+.stage-caption{position:absolute;left:0;right:0;bottom:4%;text-align:center;font:8px/1.5 var(--sans);color:var(--white);letter-spacing:.025em}
+.stage-navigation{display:none}
+@media(min-width:768px) and (prefers-reduced-motion:no-preference){
+ .stage-enhanced .stage-track{height:400svh;position:relative}
+ .stage-enhanced .stage-sticky{position:sticky;top:0;height:100svh;min-height:540px;overflow:clip;isolation:isolate}
+ .stage-enhanced .stage-scene{position:relative;width:100%;height:100%;overflow:hidden;margin:0}
+ .stage-enhanced .stage-scene::before{content:"";position:absolute;left:50%;top:0;width:50%;height:100%;background:var(--mist);z-index:-1}
+ .stage-enhanced .stage-step{display:contents}
+ .stage-enhanced .stage-copy{position:absolute;top:0;left:max(7.1528vw,calc((100vw - 1234px)/2));width:34%;max-width:410px;will-change:transform,opacity}
+ .stage-enhanced .stage-card{position:absolute;top:0;left:54%;width:min(42vw,650px);will-change:transform;transform-origin:center;background:color-mix(in srgb,var(--ink) 8%,var(--mist))}.stage-enhanced .stage-card>*{opacity:var(--stage-face-opacity,1)}
+ .stage-enhanced .stage-navigation{position:absolute;left:max(7.1528vw,calc((100vw - 1234px)/2));bottom:35px;display:block;width:34%;max-width:410px}
+ .stage-enhanced .stage-navigation-buttons{display:flex;border-bottom:1px solid color-mix(in srgb,var(--ink) 13%,transparent);gap:22px}
+ .stage-jump{min-height:44px;padding:10px 0;font:11px/1.5 var(--sans);color:color-mix(in srgb,var(--ink) 55%,transparent);position:relative;white-space:nowrap;transition:color .2s}
+ .stage-jump>span{font-size:9px;margin-right:7px}
+ .stage-jump::after{content:"";position:absolute;bottom:-1px;left:0;right:0;height:1px;background:var(--teal);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+ .stage-jump[aria-pressed=true],.stage-jump:hover{color:var(--teal)}.stage-jump[aria-pressed=true]::after{transform:scaleX(1)}
+ .stage-navigation>p{font:9px/1.5 var(--sans);margin-top:15px;color:color-mix(in srgb,var(--ink) 50%,transparent)}
+ .stage-navigation>p>span{display:inline-block;margin-left:15px}
+ .stage-enhanced .stage-scene::after{content:"";pointer-events:none;position:absolute;top:0;left:0;width:49.8%;height:100%;background:linear-gradient(var(--white) 4%,#ffffff00 21%,#ffffff00 73%,var(--white) 91%)}
+}
+@media(max-width:1023px){.stage-heading h2{font-size:60px}.stage-description{font-size:19px}.stage-step{gap:7%}.stage-status{font-size:9px}.stage-toolbar{font-size:6px;height:23px}.stage-copy h3{font-size:60px}.stage-enhanced .stage-navigation-buttons{gap:14px}.stage-jump{font-size:10px}.stage-jump>span{margin-right:4px}}
+@media(max-width:767px){
+ .stage-section{padding:70px 0 90px}.stage-heading{display:block;margin-bottom:42px}.stage-heading h2{font-size:42px;line-height:.93;letter-spacing:-.03em}.stage-heading .eyebrow{max-width:240px;margin-bottom:20px}.stage-heading>p:last-child{font-size:18px;margin-top:24px;max-width:100%}
+ .stage-scene{width:calc(100% - 80px)}.stage-step{display:flex;flex-direction:column;align-items:stretch;gap:27px;margin-bottom:66px}.stage-card{order:0;width:100%;aspect-ratio:1.2;border-radius:12px}.stage-copy{order:1}.stage-index{font-size:9px;margin-bottom:13px}.stage-copy h3{font-size:44px;margin-bottom:18px}.stage-description{font-size:18px;line-height:1.4}.stage-tag{font-size:10px;margin-top:19px}.stage-product{top:14%;left:6%;right:6%;border-radius:5px}.stage-toolbar{height:20px;font-size:5px;padding-inline:7px}.stage-status{left:9%;right:9%;min-height:34px;padding:8px 10px;font-size:9px;bottom:13%;border-radius:6px}.stage-caption{font-size:7px;bottom:4%}
+}
+@media(max-width:374px){.stage-heading h2{font-size:37px}.stage-scene{width:calc(100% - 56px)}.stage-copy h3{font-size:40px}.stage-status{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.stage-step{margin-bottom:70px}.stage-card,.stage-copy{transform:none!important;opacity:1!important}.stage-navigation{display:none!important}}

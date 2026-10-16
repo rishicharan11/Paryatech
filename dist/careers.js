@@ -1,0 +1,16 @@
+(() => {
+  const root=document.querySelector('.pt-careers-page');if(!root)return;
+  const apply=root.querySelector('[data-careers-apply]'),status=root.querySelector('[data-careers-area-status]');
+  root.querySelectorAll('[data-career-area]').forEach(button=>button.addEventListener('click',()=>{const selected=button.getAttribute('aria-pressed')!=='true';root.querySelectorAll('[data-career-area]').forEach(b=>b.setAttribute('aria-pressed',String(selected&&b===button)));const area=selected?button.dataset.careerArea:'';apply.href=`mailto:hq@paryatech.in?subject=${encodeURIComponent('Careers at Paryatech'+(area?' — '+area:''))}`;status.textContent=area?`Your email introduction will be about ${area.toLowerCase()}.`:'';}));
+  const film=root.querySelector('.pt-careers-film'),explore=root.querySelector('.pt-careers-explore');
+  if(film&&explore){
+    const fine=matchMedia('(hover: hover) and (pointer: fine)'),reduced=matchMedia('(prefers-reduced-motion: reduce)');let raf=0,inside=false,x=0,y=0,tx=0,ty=0,vx=0,vy=0;
+    const draw=()=>{vx=(vx+(tx-x)*.12)*.62;vy=(vy+(ty-y)*.12)*.62;x+=vx;y+=vy;explore.style.setProperty('--follow-x',x+'px');explore.style.setProperty('--follow-y',y+'px');if(Math.abs(tx-x)+Math.abs(ty-y)+Math.abs(vx)+Math.abs(vy)>.12)raf=requestAnimationFrame(draw);else raf=0;};
+    const schedule=()=>{if(!raf)raf=requestAnimationFrame(draw);};
+    film.addEventListener('pointermove',event=>{if(!fine.matches||reduced.matches||explore.matches(':focus-visible'))return;inside=true;const bounds=film.getBoundingClientRect();tx=Math.max(90,Math.min(bounds.width-90,event.clientX-bounds.left))-bounds.width/2;ty=Math.max(65,Math.min(bounds.height-90,event.clientY-bounds.top))-bounds.height/2;schedule();});
+    const reset=()=>{inside=false;tx=ty=0;schedule();};film.addEventListener('pointerleave',reset);explore.addEventListener('focus',reset);reduced.addEventListener('change',()=>{cancelAnimationFrame(raf);raf=0;x=y=tx=ty=0;explore.style.setProperty('--follow-x','0px');explore.style.setProperty('--follow-y','0px');});
+  }
+  const video=root.querySelector('[data-careers-video]'),toggle=root.querySelector('[data-careers-video-toggle]'),reduce=matchMedia('(prefers-reduced-motion: reduce)');if(!video||!toggle)return;let userPaused=false,visible=false;
+  const render=()=>{const playing=!video.paused;toggle.setAttribute('aria-label',`${playing?'Pause':'Play'} collaboration film`);toggle.innerHTML=`${playing?'Pause':'Play'} film <span aria-hidden="true">${playing?'Ⅱ':'▷'}</span>`;};
+  const play=()=>video.play().catch(render);toggle.addEventListener('click',()=>{if(video.paused){userPaused=false;play();}else{userPaused=true;video.pause();}});video.addEventListener('play',render);video.addEventListener('pause',render);new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible&&!userPaused&&!reduce.matches&&!document.hidden)play();else video.pause();},{threshold:.2}).observe(video);document.addEventListener('visibilitychange',()=>{if(document.hidden)video.pause();else if(visible&&!userPaused&&!reduce.matches)play();});reduce.addEventListener('change',()=>{if(reduce.matches)video.pause();else if(visible&&!userPaused)play();});render();
+})();

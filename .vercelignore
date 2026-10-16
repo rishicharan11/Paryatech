@@ -1,0 +1,8 @@
+.git
+.openai
+output
+docs
+.DS_Store
+*.log
+.env
+.env.*

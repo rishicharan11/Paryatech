@@ -1,0 +1,45 @@
+@property --sticker-scale{syntax:"<number>";inherits:false;initial-value:1}
+/* Figma footer structure with the established Paryatech type and palette. */
+.site-footer.sticker-footer{background:var(--white);color:var(--ink);padding:32px 40px 24px;min-height:0;overflow:clip}
+.site-footer.sticker-footer :focus-visible{outline-color:var(--teal)}
+.sticker-footer-frame{border:0;border-radius:0;overflow:visible}
+.sticker-footer-top{display:flex;justify-content:space-between;gap:60px;padding:40px 20px 20px;min-height:260px}
+.sticker-footer-brand{flex:0 0 32%;padding-top:0}
+.sticker-footer-brand>a:first-child{display:block;width:258px;max-width:100%}
+.sticker-footer-brand img{height:auto;width:258px}
+.sticker-footer-email{display:inline-flex;gap:25px;margin-top:26px;font:12px/1.5 var(--sans);color:var(--teal)}
+.sticker-footer-links{display:grid;grid-template-columns:1.15fr 1.2fr 1fr;gap:clamp(30px,6vw,100px);padding:0 clamp(10px,3vw,60px) 0 0;flex:1;max-width:700px;font-family:var(--sans);text-transform:uppercase}
+.sticker-footer-links nav{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.sticker-footer-links nav>p{font:600 14px/1.5 var(--sans);margin:0 0 12px;color:var(--ink)}
+.sticker-footer-links nav>a,.sticker-footer-links nav>button{font:11px/1.7 var(--sans);color:#111111b3;padding:0;text-align:left;text-transform:uppercase;min-height:20px}
+.sticker-footer-links nav>a:hover,.sticker-footer-links nav>button:hover,.sticker-footer-email:hover{color:var(--teal);text-decoration:underline;text-underline-offset:4px}
+.sticker-board{position:relative;height:clamp(460px,39vw,620px);isolation:isolate;overflow:hidden;background:var(--white);border-radius:0;touch-action:pan-y}
+.sticker-instructions{position:absolute;z-index:100;left:20px;top:12px;font:10px/1.5 var(--sans);letter-spacing:.02em;color:#115553a6;pointer-events:none}
+.sticker-instruction-mobile{display:none}
+.travel-sticker{position:absolute;left:0;top:0;display:block;width:15.5%;max-width:205px;aspect-ratio:3/2;padding:0;background:transparent;cursor:grab;user-select:none;-webkit-user-select:none;touch-action:pan-y;transform:translate3d(var(--sticker-x,0px),var(--sticker-y,0px),0) rotate(var(--sticker-rotation,0deg)) scale(var(--sticker-scale,1));transform-origin:50% 60%;filter:drop-shadow(0 6px 4px #11111114);transition:filter .3s var(--ease),--sticker-scale .35s var(--ease);will-change:transform;-webkit-touch-callout:none}
+.travel-sticker img{display:block;width:100%;height:100%;object-fit:contain;pointer-events:none;-webkit-user-drag:none}
+.travel-sticker:hover,.travel-sticker:focus-visible,.travel-sticker.is-selected{--sticker-scale:1.035;filter:drop-shadow(0 12px 9px #11111125)}
+.travel-sticker.is-dragging{cursor:grabbing;--sticker-scale:1.065;filter:drop-shadow(0 20px 14px #1111112d);transition:filter .25s,--sticker-scale .25s;touch-action:none}
+.travel-sticker.is-selected{touch-action:none}
+.sticker-footer .travel-sticker:focus-visible{outline:2px dashed var(--teal);outline-offset:-15px;border-radius:30%}
+.sticker-label{position:absolute;left:50%;bottom:8%;transform:translate(-50%,8px);white-space:nowrap;color:var(--ink);background:var(--white);border:1px solid #1155531a;padding:7px 11px;border-radius:50px;font:10px/1.2 var(--sans);opacity:0;pointer-events:none;transition:opacity .25s,transform .3s var(--ease);box-shadow:0 3px 10px #11111109}
+.sticker-label>span{color:var(--teal);margin-left:6px}
+.travel-sticker:hover .sticker-label,.travel-sticker:focus-visible .sticker-label,.travel-sticker.is-selected .sticker-label,.travel-sticker.is-dragging .sticker-label{opacity:1;transform:translate(-50%,0)}
+.sticker-footer-meta{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 2px 0;font:10px/1.5 var(--sans);color:#11111180}
+.sticker-reset{padding:5px 0;font:10px/1.5 var(--sans);color:var(--teal);display:inline-flex;gap:8px;align-items:center;text-decoration:underline;text-underline-offset:4px}
+.sticker-reset span{font-size:17px;text-decoration:none}
+.sticker-footer .sticker-reset:focus-visible{outline-color:var(--teal)}
+.sticker-sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(min-width:1700px){.sticker-footer-top{min-height:300px}.sticker-board{height:620px}.travel-sticker{max-width:255px}}
+@media(max-width:1000px){.site-footer.sticker-footer{padding:25px 25px 20px}.sticker-footer-top{gap:30px;padding:35px 22px 10px;min-height:250px}.sticker-footer-brand{flex-basis:30%}.sticker-footer-brand img{width:220px}.sticker-footer-links{gap:25px;padding-right:0}.sticker-footer-links nav>p{font-size:12px}.sticker-footer-links nav>a,.sticker-footer-links nav>button{font-size:10px}.travel-sticker{width:18%;max-width:180px}.sticker-board{height:530px}}
+@media(max-width:650px){.site-footer.sticker-footer{padding:15px 12px 20px}.sticker-footer-frame{border-radius:0}.sticker-footer-top{display:block;padding:28px 20px 20px;min-height:0}.sticker-footer-brand{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:36px}.sticker-footer-brand>a:first-child{width:160px}.sticker-footer-brand img{width:160px}.sticker-footer-email{font-size:10px;margin-top:8px;gap:5px}.sticker-footer-links{gap:20px;grid-template-columns:1.1fr 1.15fr .9fr}.sticker-footer-links nav>p{font-size:12px;margin-bottom:10px}.sticker-footer-links nav>a,.sticker-footer-links nav>button{font-size:11px;line-height:1.5;min-height:32px;padding:5px 0}.sticker-board{height:650px;border-radius:0}.travel-sticker{width:30.5%;max-width:132.5px}.sticker-instructions{font-size:9px;left:20px;top:4px}.sticker-instruction-desktop{display:none}.sticker-instruction-mobile{display:inline}.sticker-label{font-size:9px;padding:6px 10px;bottom:10%}.sticker-footer-meta{flex-wrap:wrap;font-size:9px;gap:12px;padding:16px 8px 0}.sticker-footer-meta>p:last-child{display:none}.sticker-reset{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.travel-sticker,.sticker-label{transition:none}.travel-sticker:hover,.travel-sticker:focus-visible,.travel-sticker.is-selected,.travel-sticker.is-dragging{--sticker-scale:1}}
+
+/* Bodies retain their approved dimensions; only the space around the larger pool grows. */
+.sticker-board.is-stirring{cursor:default}
+.sticker-board .travel-sticker:active{cursor:grabbing}
+@media(max-width:380px){.sticker-board{height:610px}}
+
+/* The collection remains visible when JavaScript is unavailable. */
+.sticker-board:not(.is-physics-ready){height:auto;min-height:330px;display:flex;flex-wrap:wrap;gap:4px;align-items:center;padding-top:40px}
+.sticker-board:not(.is-physics-ready) .travel-sticker{position:relative;flex:0 0 auto;transform:rotate(var(--sticker-rotation,0deg));margin:4px 0}

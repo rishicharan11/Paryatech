@@ -1,0 +1,32 @@
+[
+  {
+    "file": "faq-forest.mp4",
+    "poster": "faq-forest-poster.jpg",
+    "creator": "Zlatin Georgiev",
+    "source": "https://www.pexels.com/video/drone-footage-of-a-mountain-forest-5607838/",
+    "original": "assets/media/hero.mp4",
+    "description": "Eight-second muted crop from the existing opening film; supportive travel footage.",
+    "license": "https://www.pexels.com/license/",
+    "encoding": "640\u00d7400 H264 24fps CRF29 faststart, no audio"
+  },
+  {
+    "file": "faq-team.mp4",
+    "poster": "faq-team-poster.jpg",
+    "creator": "Artem Podrez",
+    "source": "https://www.pexels.com/video/a-group-of-people-looking-at-a-laptop-in-an-office-8519377/",
+    "original": "https://videos.pexels.com/video-files/8519377/8519377-hd_1920_1080_30fps.mp4",
+    "description": "Eight-second muted crop of colleagues collaborating around a laptop.",
+    "license": "https://www.pexels.com/license/",
+    "encoding": "640\u00d7400 H264 24fps CRF29 faststart, no audio"
+  },
+  {
+    "file": "faq-coast.mp4",
+    "poster": "faq-coast-poster.jpg",
+    "creator": "Mikhail Nilov",
+    "source": "https://www.pexels.com/video/drone-footage-of-a-coast-8441316/",
+    "original": "https://videos.pexels.com/video-files/8441316/8441316-uhd_4096_2160_25fps.mp4",
+    "description": "Eight-second muted coastal aerial crop.",
+    "license": "https://www.pexels.com/license/",
+    "encoding": "640\u00d7400 H264 24fps CRF29 faststart, no audio"
+  }
+]

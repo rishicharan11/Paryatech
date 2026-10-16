@@ -1,0 +1,252 @@
+[
+  {
+    "route": "/blogs/",
+    "title": "Blogs & news — Paryatech",
+    "description": "Practical guides and product notes for the people behind every journey.",
+    "fragment": "src/pages/blogs.html",
+    "styles": [
+      "blogs.css"
+    ],
+    "scripts": [
+      "blogs.js"
+    ]
+  },
+  {
+    "route": "/blogs/a-clearer-enquiry-pipeline/",
+    "title": "A clearer path from hello to booked. — Paryatech",
+    "description": "A useful enquiry pipeline starts with one simple question: what needs to happen next?",
+    "fragment": "src/pages/article-pipeline.html",
+    "styles": [
+      "blogs.css"
+    ],
+    "scripts": [
+      "blogs.js"
+    ],
+    "category": "Guides",
+    "topic": "Enquiries",
+    "readTime": "3 min read",
+    "image": "/assets/media/forest.jpg",
+    "alt": "Green mountain landscape and winding paths"
+  },
+  {
+    "route": "/blogs/one-shared-conversation/",
+    "title": "One shared conversation. A team in sync. — Paryatech",
+    "description": "A good handover should move the work forward without making the traveller repeat themselves.",
+    "fragment": "src/pages/article-inbox.html",
+    "styles": [
+      "blogs.css"
+    ],
+    "scripts": [
+      "blogs.js"
+    ],
+    "category": "Guides",
+    "topic": "Teamwork",
+    "readTime": "3 min read",
+    "image": "/assets/media/team.jpg",
+    "alt": "Colleagues working together around a laptop"
+  },
+  {
+    "route": "/blogs/proposals-that-feel-like-you/",
+    "title": "Your brand. Every traveller touchpoint. — Paryatech",
+    "description": "A proposal should make a trip easy to understand and the next decision easy to make.",
+    "fragment": "src/pages/article-proposals.html",
+    "styles": [
+      "blogs.css"
+    ],
+    "scripts": [
+      "blogs.js"
+    ],
+    "category": "Guides",
+    "topic": "Proposals",
+    "readTime": "3 min read",
+    "image": "/assets/media/destination.jpg",
+    "alt": "Ornate architecture at an Indian travel destination"
+  },
+  {
+    "route": "/blogs/start-with-your-next-enquiry/",
+    "title": "A calmer start. One enquiry at a time. — Paryatech",
+    "description": "Changing the way your agency works can begin with the next enquiry, rather than a complete migration.",
+    "fragment": "src/pages/article-start.html",
+    "styles": [
+      "blogs.css"
+    ],
+    "scripts": [
+      "blogs.js"
+    ],
+    "category": "Product notes",
+    "topic": "Getting started",
+    "readTime": "3 min read",
+    "image": "/assets/media/mountain.jpg",
+    "alt": "Mountain valley beneath a clear blue sky"
+  },
+  {
+    "route": "/blogs/thoughtful-traveller-follow-ups/",
+    "title": "A follow-up worth replying to.",
+    "description": "Keep a trip conversation moving with useful context, clear ownership and a next step that respects the traveller.",
+    "fragment": "src/pages/article-follow-ups.html",
+    "styles": [
+      "blogs.css"
+    ],
+    "scripts": [
+      "blogs.js"
+    ],
+    "category": "Guides",
+    "topic": "Follow-ups",
+    "readTime": "3 min read",
+    "image": "/assets/media/coast.jpg",
+    "alt": "A quiet coastline beside clear blue water"
+  },
+  {
+    "route": "/blogs/a-better-trip-brief/",
+    "title": "A better trip begins with a clearer brief.",
+    "description": "Ask the questions that shape a useful itinerary before your team starts comparing hotels and building proposals.",
+    "fragment": "src/pages/article-trip-brief.html",
+    "styles": [
+      "blogs.css"
+    ],
+    "scripts": [
+      "blogs.js"
+    ],
+    "category": "Guides",
+    "topic": "Trip planning",
+    "readTime": "3 min read",
+    "image": "/assets/media/mountain.jpg",
+    "alt": "Travellers crossing an open mountain landscape"
+  },
+  {
+    "route": "/blogs/clearer-supplier-handovers/",
+    "title": "The details that make a handover work.",
+    "description": "Give suppliers and teammates the same clear picture of the trip, the request and the decisions still waiting.",
+    "fragment": "src/pages/article-supplier-handover.html",
+    "styles": [
+      "blogs.css"
+    ],
+    "scripts": [
+      "blogs.js"
+    ],
+    "category": "Guides",
+    "topic": "Operations",
+    "readTime": "3 min read",
+    "image": "/assets/media/travel.jpg",
+    "alt": "An inviting travel landscape photographed in natural light"
+  },
+  {
+    "route": "/blogs/before-you-send-the-proposal/",
+    "title": "Before you send the proposal.",
+    "description": "A focused review of dates, inclusions and decisions can make the next version clearer for everyone reading it.",
+    "fragment": "src/pages/article-proposal-review.html",
+    "styles": [
+      "blogs.css"
+    ],
+    "scripts": [
+      "blogs.js"
+    ],
+    "category": "Guides",
+    "topic": "Proposals",
+    "readTime": "3 min read",
+    "image": "/assets/media/destination.jpg",
+    "alt": "The detailed facade of Hawa Mahal in Jaipur"
+  },
+  {
+    "route": "/blogs/a-calmer-team-rhythm/",
+    "title": "A calmer rhythm for a busy travel team.",
+    "description": "Build a small daily review around ownership, waiting decisions and the handovers that keep enquiries moving.",
+    "fragment": "src/pages/article-team-rhythm.html",
+    "styles": [
+      "blogs.css"
+    ],
+    "scripts": [
+      "blogs.js"
+    ],
+    "category": "Guides",
+    "topic": "Teamwork",
+    "readTime": "3 min read",
+    "image": "/assets/media/team.jpg",
+    "alt": "A team discussing work together around a laptop"
+  },
+  {
+    "route": "/blogs/itineraries-that-answer-questions/",
+    "title": "An itinerary that answers the next question.",
+    "description": "Make the shape of a trip clear before a traveller needs to ask what happens next.",
+    "fragment": "src/pages/article-itinerary.html",
+    "styles": [
+      "blogs.css"
+    ],
+    "scripts": [
+      "blogs.js"
+    ],
+    "category": "Guides",
+    "topic": "Itineraries",
+    "readTime": "4 min read",
+    "image": "/assets/media/coast.jpg",
+    "alt": "A bright coastline opening onto calm blue water"
+  },
+  {
+    "route": "/blogs/a-clearer-booking-checklist/",
+    "title": "A booking checklist everyone can follow.",
+    "description": "Turn a traveller’s yes into a clear sequence of checks, confirmations and handovers.",
+    "fragment": "src/pages/article-booking-checklist.html",
+    "styles": [
+      "blogs.css"
+    ],
+    "scripts": [
+      "blogs.js"
+    ],
+    "category": "Guides",
+    "topic": "Bookings",
+    "readTime": "4 min read",
+    "image": "/assets/media/team.jpg",
+    "alt": "A team reviewing work together around a laptop"
+  },
+  {
+    "route": "/blogs/remembering-repeat-travellers/",
+    "title": "Remember the details. Welcome them back.",
+    "description": "Use helpful context to make a returning traveller’s next conversation feel considered.",
+    "fragment": "src/pages/article-repeat-travellers.html",
+    "styles": [
+      "blogs.css"
+    ],
+    "scripts": [
+      "blogs.js"
+    ],
+    "category": "Guides",
+    "topic": "Traveller experience",
+    "readTime": "4 min read",
+    "image": "/assets/media/travel.jpg",
+    "alt": "A scenic destination inviting another journey"
+  },
+  {
+    "route": "/blogs/prepare-for-the-busy-season/",
+    "title": "Make room for your busiest season.",
+    "description": "Prepare ownership, handovers and working information before the enquiry queue grows.",
+    "fragment": "src/pages/article-season-preparation.html",
+    "styles": [
+      "blogs.css"
+    ],
+    "scripts": [
+      "blogs.js"
+    ],
+    "category": "Guides",
+    "topic": "Agency operations",
+    "readTime": "4 min read",
+    "image": "/assets/media/mountain.jpg",
+    "alt": "A broad mountain landscape beneath an open sky"
+  },
+  {
+    "route": "/blogs/a-website-that-starts-conversations/",
+    "title": "A website that starts a better conversation.",
+    "description": "Help a visitor understand your agency and share enough context for a useful first reply.",
+    "fragment": "src/pages/article-agency-website.html",
+    "styles": [
+      "blogs.css"
+    ],
+    "scripts": [
+      "blogs.js"
+    ],
+    "category": "Guides",
+    "topic": "Agency websites",
+    "readTime": "4 min read",
+    "image": "/assets/media/destination.jpg",
+    "alt": "The detailed pink facade of Hawa Mahal in Jaipur"
+  }
+]
