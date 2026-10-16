@@ -22,15 +22,11 @@
   document.addEventListener('keydown', event => { if (event.key === 'Escape' && menuOpen) { toggleMenu(false); menuButton.focus(); } });
   header?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => toggleMenu(false)));
   small.addEventListener('change', () => toggleMenu(false));
-  document.querySelector('.announcement-close')?.addEventListener('click', () => {
-    document.querySelector('.announcement').classList.add('dismissed');
-    document.documentElement.style.setProperty('--banner-height', '0px');
-  });
   function markCurrent() {
     menu?.querySelectorAll(':scope > a').forEach(link => {
       const url = new URL(link.href);
       const sectionMatch = url.pathname === '/blogs/' && location.pathname.startsWith('/blogs/');
-      const current = sectionMatch || (url.pathname === location.pathname && (url.hash ? url.hash === location.hash : !(location.pathname === '/' && location.hash === '#features')));
+      const current = sectionMatch || (url.pathname === location.pathname && (!url.hash || url.hash === location.hash));
       if (current) link.setAttribute('aria-current', url.hash ? 'location' : 'page'); else link.removeAttribute('aria-current');
     });
   }

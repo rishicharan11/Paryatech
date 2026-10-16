@@ -1,7 +1,12 @@
-import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {readFile,writeFile,mkdir,readdir} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
 const root = new URL('../',import.meta.url);
 const siteOrigin = new URL(process.env.SITE_URL || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : 'http://localhost:4179')).origin;
 const read = file => readFile(new URL(file,root),'utf8');
+const assetVersions = new Map();
+for(const file of await readdir(new URL('dist/',root))) {
+  if(/\.(css|js)$/.test(file)) assetVersions.set(`/${file}`,createHash('sha256').update(await read(`dist/${file}`)).digest('hex').slice(0,10));
+}
 const escape = text => text.replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
 const boot = `<script>try{const t=Number(sessionStorage.getItem('pt-navigation'));if(t&&Date.now()-t<15000){document.documentElement.classList.add('is-arriving');window.__ptArrivalSafety=setTimeout(()=>{document.documentElement.classList.remove('is-arriving');const o=document.querySelector('.page-transition');if(o)o.hidden=true},4000)}else sessionStorage.removeItem('pt-navigation')}catch{}</script>`;
 const shared = {};
@@ -11,6 +16,7 @@ const footer = (await read('dist/footer-v2.html')).trim();
 function normalize(html) {
   return html.replace(/\b(src|href|poster)="(assets\/[^"\n]+|(?:styles|site|sections|build-v3|workflow-v2|faq-v2|footer-v2|pricing)\.(?:css|js)|script\.js)"/g,(_,attribute,url)=>`${attribute}="/${url}"`)
     .replace(/<button\b([^>]*\bdata-demo\b[^>]*)>([\s\S]*?)<\/button>/g,(_,attributes,content)=>`<a href="/book-a-demo/"${attributes.replace(/\s+type="[^"]*"/g,'')}>${content}</a>`)
+    .replace(/\b(src|href)="(\/[^"?#]+\.(?:css|js))"/g,(_,attribute,url)=>`${attribute}="${url}${assetVersions.has(url)?`?v=${assetVersions.get(url)}`:''}"`)
     .replace(/<link rel="icon"[^>]*>/,'<link rel="icon" href="/assets/brand-symbol.png" type="image/png">');
 }
 function replace(html,marker,value) {
@@ -31,6 +37,9 @@ for(const [marker,value] of Object.entries(shared)) home=replace(home,marker,val
 home=home.replace('</head>','<link rel="preload" as="image" href="/assets/brand-symbol.png">\n</head>');
 await save('',home);
 const pages = [
+  {route:'features/',title:'Features',description:'Explore the connected Paryatech workspace for customers, enquiries, conversations, proposals and agency operations.',fragment:'features.html',styles:['features.css'],scripts:['features.js']},
+  {route:'workflows/',title:'Workflows',description:'Follow one Coorg enquiry from customer creation and supplier rates to a priced proposal, acceptance and confirmed booking.',fragment:'workflows.html',styles:['workflows.css'],scripts:['workflows.js']},
+  {route:'community/',title:'Community',description:'Practical ideas, product conversations and shared experience for the people behind every journey.',fragment:'community.html',styles:['community.css'],scripts:['community.js']},
   {route:'book-a-demo/',title:'Book a demo',description:'See how Paryatech brings your agency’s enquiries, conversations, itineraries and bookings together.',fragment:'book-a-demo.html',styles:['demo.css'],scripts:['demo.js']},
   {route:'pricing/',title:'Pricing',description:'Choose quarterly, half-yearly or yearly Paryatech pricing for your travel agency.',fragment:'pricing.html',styles:['pricing.css'],scripts:['pricing.js']},
   {route:'careers/',title:'Careers',description:'Help build thoughtful software for the people who bring the world within reach.',fragment:'careers.html',styles:['careers.css'],scripts:['careers.js']},

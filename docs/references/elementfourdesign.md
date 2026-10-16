@@ -6,7 +6,7 @@ Reference: [Lusion Projects](https://lusion.co/projects/). Inspected 16 October 
 
 The reference is a creative studio’s project index. Its hierarchy gives the work most of the page: a very large title, a small project count, a directional arrow and a two-column gallery. Category descriptions and names sit beneath images. The studio’s contact, menu and further-page prompts form a secondary layer around the gallery. These are portfolio projects, not editorial stories or software features.
 
-The Paryatech adaptation uses the same spacious index rhythm for **Blogs & news**. Its content is original guidance for travel agencies. Four complete stories make the cards useful immediately. There are no invented company announcements, publication dates, customer results or attributed authors. A short note explains that product announcements will be added when published.
+The Paryatech adaptation uses the same spacious index rhythm for **Blogs & news**. Its content is original guidance for travel agencies. Fourteen complete stories make the cards useful immediately. There are no invented company announcements, publication dates, customer results or attributed authors. A short note explains that product announcements will be added when published.
 
 ## Element inventory
 
@@ -14,7 +14,7 @@ The Paryatech adaptation uses the same spacious index rhythm for **Blogs & news*
 |---|---|---|
 | Global header | Small studio wordmark left; compact sound, contact and menu controls right | Existing floating Paryatech navigation, supplied by the shared shell |
 | Page title | Very large uppercase type, approximately 17vw in the stylesheet | Large Zagma “Blogs & news” with the same dominant presence |
-| Count | Small elevated count at the title’s upper right; live count was 19 | Honest `04` story count |
+| Count | Small elevated count at the title’s upper right; live count was 19 | Honest `14` story count |
 | Directional cue | Thin diagonal arrow alongside the title | Large diagonal link to the story index |
 | Gallery | Twelve-column grid; each card spans six columns | Two equal columns, then one column on small screens |
 | Media | Broad rounded thumbnails, about 0.65 image height per unit width | Local, already credited Pexels destination/team images; ratio 1.54 |
@@ -36,13 +36,26 @@ The journal keeps a restrained version: individual title characters enter from b
 
 Reference cards are DOM-linked WebGL surfaces, not ordinary animated `<img>` elements. A card’s image and matching depth map feed the rendering material. Its arrival interpolates the image reveal over about 1.5 seconds; position and rotation settle over about two seconds. The source also passes eased scroll strength into a small ripple term, capped around 0.15.
 
-Paryatech uses a lightweight equivalent suited to its static site: a short upward/rotational reveal when a card first enters view. Reading and navigation work before JavaScript loads. Cards remain visible if observers are unavailable. We do not import the reference’s renderer, models, depth maps or branded project imagery.
+The 16 October team feedback and two supplied comparison recordings show why a one-time reveal was insufficient. In the desired second recording the two media panels repeatedly swing in from the centre with opposing perspective, then flatten into their reading position as scrolling continues. The reference resets an item’s arrival time when the item leaves its active range. This gives later rows the same motion as the first pair.
+
+The revised Paryatech journal uses continuous media motion rather than a one-shot card animation:
+
+- The document retains native scroll, wheel, touch, keyboard, anchor and browser-history behaviour. No global scroll smoothing or wheel interception is added.
+- A single requestAnimationFrame loop eases only the thumbnails, with a frame-rate independent 110ms response. It sleeps after the visible panels settle.
+- Each pair opens from the middle: up to 32px horizontal drift, 55px vertical arrival, opposing 3.1° planar rotation and 9° perspective yaw. A rounded inset mask relaxes from 4.2% to the normal card edge.
+- Images move inside their masks by at most 22px through the viewport. The 1.16 image overscan keeps the crop filled. Scroll-speed feedback adds a bounded extra nudge and damps smoothly when the scroll stops.
+- Metadata, title and description settle in sequence at 0/65/120ms offsets over 750–1050ms. They remain readable after entrance and when focused.
+- Mobile keeps the same choreography at a smaller amplitude: 9px lateral, 24px vertical, 1° planar rotation, 2° perspective and 9px inner-image drift.
+- Stable card boxes are measured only when layout changes. Only panels near the viewport update; GPU hints are removed from distant panels. Search, category changes, fonts and resizing trigger new measurements.
+- Reduced motion removes all media transforms and masks and presents full captions immediately. A changed preference stops the running loop. Without JavaScript the ordinary images, headings and article links remain visible.
+
+These are a DOM/CSS adaptation of the reference flow. No reference renderer, models, depth maps, shader code or branded project imagery are included.
 
 ### Hover and focus
 
 The reference responds to pointer position with depth focus, zoom and damped secondary motion. Initial hover thresholds at 0, 0.2 and 0.3 seconds contribute short changes in image direction. The title uses repeated character columns for a rolling reveal and shifts horizontally to admit an arrow. This is a spatial preview response, rather than a timed gallery carousel.
 
-The journal follows that sequence with pointer-relative image tilt, a slow image zoom, a rounded “Read the story” prompt and a title that shifts aside for an arrow. The tilt is limited to a few degrees and image translation to a few pixels. Pointer leave returns each media panel to rest. Keyboard focus exposes the same read prompt and title cue. Touch shows the read prompt permanently; the first tap opens the article directly. Reduced motion disables the movement.
+The journal follows that sequence with pointer-relative image tilt, a slow image zoom, a rounded “Read the story” prompt and a title that shifts aside for an arrow. Pointer tilt is limited to a few degrees and eases through the same motion loop, avoiding competing transform transitions. Pointer leave returns the pointer response to rest while preserving the current scroll position. Keyboard focus exposes the same read prompt and title cue. Touch shows the read prompt permanently; the first tap opens the article directly. Reduced motion disables the movement.
 
 ### Project opening
 
@@ -56,13 +69,13 @@ The following are editorial requirements rather than copied Lusion elements:
 - Search matches titles, topics and short descriptions. It combines with the selected filter.
 - A live result count reports changes without moving focus.
 - An empty state has a functional reset button.
-- Without JavaScript, all four cards remain available; enhancement controls stay hidden.
+- Without JavaScript, all fourteen cards remain available; enhancement controls stay hidden.
 
 Articles include an index link, category/read-time label, title, short introduction, cover image, a small contents list, readable sections and a next-story link. Every demo link targets `/book-a-demo/`.
 
 ## Brand and content rules
 
-Keep local Zagma and NeueHaas; use `#111111`, `#E5E8E3`, `#115553` and white. Lusion’s pale lavender, heavy uppercase sans-serif title and original work are reference observations, not new Paryatech brand tokens. Existing local photography retains its Pexels credits through the common film credits.
+Keep local Zagma and NeueHaas; use `#111111`, `#E5E8E3`, `#115553` and white. Lusion’s pale lavender, heavy uppercase sans-serif title and original work are reference observations, not new Paryatech brand tokens. Existing local photography retains its Pexels source attribution in the project’s media documentation.
 
 The article content is written for this prototype using Paryatech’s public descriptions of enquiries, shared inboxes, proposals and gradual onboarding. Practical advice is editorial guidance. It does not announce unverified capabilities, releases or customer outcomes.
 
@@ -77,3 +90,10 @@ The article content is written for this prototype using Paryatech’s public des
 - `output/lusion-pages/ProjectsMainSection.txt`, `ProjectItem.txt` and `research-notes.json`
 
 Public source files were saved for inspection, not included as runtime dependencies. Browser inspection used local Chrome after the collaborative browser’s own-tab snapshot failed twice with `Preview automation snapshot timed out after 15000ms.`
+
+
+## Team feedback verification — 16 October 2026
+
+Inspected the supplied current recording (`317d35c8…`) and desired reference recording (`60573a60…`), both approximately 4.6 seconds, with AVFoundation frame extraction. Live browser inspection confirmed the reference still uses paired media surfaces and a stable DOM grid. The journal update changes only `blogs.css` and `blogs.js`; shared navigation, typography, article content and the common page transition are retained.
+
+Evidence is saved under `output/paryatech-feedback-v8/journal/`: extracted reference frames, desktop/mobile screenshots, a captured scroll recording and `verification.json`. Browser checks cover all fourteen cards, category counts, search, empty/reset states, keyboard focus, dynamic reduced motion, JavaScript-disabled reading and 320/390/768/1440px layouts. The collaborative browser was used first; local screenshots used Chrome after two snapshots returned `Preview automation snapshot timed out after 15000ms.`

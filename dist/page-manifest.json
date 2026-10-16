@@ -1,5 +1,41 @@
 [
   {
+    "route": "features/",
+    "title": "Features",
+    "description": "Explore the connected Paryatech workspace for customers, enquiries, conversations, proposals and agency operations.",
+    "fragment": "features.html",
+    "styles": [
+      "features.css"
+    ],
+    "scripts": [
+      "features.js"
+    ]
+  },
+  {
+    "route": "workflows/",
+    "title": "Workflows",
+    "description": "Follow one Coorg enquiry from customer creation and supplier rates to a priced proposal, acceptance and confirmed booking.",
+    "fragment": "workflows.html",
+    "styles": [
+      "workflows.css"
+    ],
+    "scripts": [
+      "workflows.js"
+    ]
+  },
+  {
+    "route": "community/",
+    "title": "Community",
+    "description": "Practical ideas, product conversations and shared experience for the people behind every journey.",
+    "fragment": "community.html",
+    "styles": [
+      "community.css"
+    ],
+    "scripts": [
+      "community.js"
+    ]
+  },
+  {
     "route": "book-a-demo/",
     "title": "Book a demo",
     "description": "See how Paryatech brings your agency’s enquiries, conversations, itineraries and bookings together.",
